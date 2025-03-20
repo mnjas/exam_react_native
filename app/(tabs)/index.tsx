@@ -1,22 +1,14 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import TodoList from '../../components/TodoList';
 
 const App = () => {
 
   return (
-    <View style={styles.container}>
-      <Text>Hello World!</Text>
-    </View>
+    <>
+      <TodoList />
+    </>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#FFF',
-    alignItems: 'center',
-  },
-});
 
 export default App;
