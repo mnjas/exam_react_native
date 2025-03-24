@@ -15,9 +15,9 @@ export default function TodoItem({ task, deleteTask, toggleCompleted, addToFavor
         {task.text}
       </Text>
       <View style={styles.item}>
-        <Button title="Terminé" onPress={() => toggleCompleted(task.id)} />
-        <Button title="Favori" onPress={() => addToFavorites(task)} />
-        <Button title="Supprimer" onPress={() => deleteTask(task.id)} color="red" />
+        <Button title="Done" onPress={() => toggleCompleted(task.id)} color="green"/>
+        <Button title="Favorite" onPress={() => addToFavorites(task)} />
+        <Button title="Delete" onPress={() => deleteTask(task.id)} color="red" />
       </View>
     </View>
   );
