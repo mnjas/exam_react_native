@@ -28,6 +28,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#FFF',
     alignItems: 'center',
+    borderRadius: 20,
+    padding: 30,
+    borderWidth: 10,
+    borderColor: "thistle",
   },
   checkbox: {
     justifyContent: 'center',

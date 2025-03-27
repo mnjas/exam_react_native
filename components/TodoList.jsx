@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, TextInput, Button, StyleSheet, ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import TodoItem from './TodoItem';
 import { useNavigation } from '@react-navigation/native';
@@ -97,7 +97,10 @@ export default function TodoList() {
   }
 
   return (
-    <View style={styles.container}>
+    <ScrollView 
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}
+    >
       {tasks.map(task => (
         <TodoItem
           key={task.id}
@@ -114,25 +117,38 @@ export default function TodoList() {
         onChangeText={setText}
         placeholder="New game"
       />
-      <Button title="Add a game" onPress={addGame} />
-      <Button title="View favorites" onPress={() => navigation.navigate('favoris', { favorites })} />
-      <Button title="See available games" onPress={goToListGames} />
-    </View>
+
+      <Button title="Add a game" onPress={addGame} color="#FFF"/>
+      <Button title="View favorites" onPress={() => navigation.navigate('favoris', { favorites })} color="#FFF"/>
+      <Button title="See available games" onPress={goToListGames} color="#FFF"/>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#FFF',
+    backgroundColor: 'blue',
+  },
+  contentContainer: {
     alignItems: 'center',
+    justifyContent: 'flex-start',
+    paddingTop: 50,
+    paddingHorizontal: 20,
+    paddingBottom: 20,
+    gap: 20
   },
   input: {
-    height: 40,
-    width: 300,
-    margin: 12,
+    height: 60,
+    width: '80%',
+    marginBottom: 15,
     borderWidth: 1,
-    padding: 10,
+    paddingHorizontal: 10,
+    backgroundColor: "#FFF",
+    color: "#000",
+  },
+  button: {
+    width: '80%',
+    marginBottom: 10,
   },
 });
